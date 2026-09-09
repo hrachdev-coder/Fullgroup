@@ -1,0 +1,13 @@
+/* Scoped to the filter sidebar; the existing product grid and cards retain their styles. */
+.fg-filter-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 28px; align-items: start; clear: both; }
+.fg-filter-products { min-width: 0; }
+.fg-filter-sidebar { min-width: 0; padding: 20px; border: 1px solid #e5e5e5; border-radius: 12px; background: #fff; }
+.fg-filter-sidebar .wp-block-heading { font-size: 16px; line-height: 1.5; margin: 0 0 14px; }
+.fg-filter-sidebar .wc-block-product-filters__overlay-content > * + * { margin-top: 24px; }
+.fg-filter-sidebar [hidden] { display: none !important; }
+.fg-filter-sidebar button, .fg-filter-sidebar input { font: inherit; }
+.fg-filter-sidebar .wc-block-product-filter-price-slider input[type="text"] { min-width: 0; max-width: 100%; }
+@media (max-width: 900px) {
+    .fg-filter-layout { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .fg-filter-sidebar { padding: 14px; }
+}
