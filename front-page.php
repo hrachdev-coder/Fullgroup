@@ -81,23 +81,20 @@
         <!-- CENTER: HARD CODE BANNER -->
         <div class="main-banner">
 
-            <a href="#">
-                <img src="<? the_field('main_banner') ?>" alt="Banner"
-                >
-            </a>
+           <?php if ( get_field('main_banner') ) : ?>
+                <img src="<?php echo esc_url( get_field('main_banner') ); ?>" alt="Banner">
+            <?php endif; ?>
 
         </div>
         <!-- RIGHT: HARD CODE CARDS -->
         <div class="side-banners">
 
             <a href="#" class="side-banner">
-                 <img src="<? the_field('banner_1') ?>" alt="Banner"
-                >
+               <img src="<?php the_field('banner_1'); ?>" alt="Banner">
             </a>
 
             <a href="#" class="side-banner">
-                <img src="<? the_field('banner_2') ?>" alt="Banner"
-                >
+                <img src="<?php the_field('banner_2'); ?>" alt="Banner">
             </a>
 
         </div>
