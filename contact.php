@@ -122,7 +122,7 @@ get_header();
                         Լրացրեք ձևը, և մենք հնարավորինս շուտ կկապվենք ձեզ հետ։
                     </p>
 
-                    <?php echo do_shortcode('[contact-form-7 id="123" title="Contact form"]'); ?>
+                    <?php echo do_shortcode('[contact-form-7 id="04e2e8c" title="Contact form 1"]'); ?>
 
                 </div>
 
