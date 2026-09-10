@@ -89,14 +89,9 @@
         <!-- RIGHT: HARD CODE CARDS -->
         <div class="side-banners">
 
-            <a href="#" class="side-banner">
-               <img src="<?php the_field('banner_1'); ?>" alt="Banner">
-            </a>
+            <img src="<?php the_field('banner_1'); ?>" alt="Banner">
 
-            <a href="#" class="side-banner">
-                <img src="<?php the_field('banner_2'); ?>" alt="Banner">
-            </a>
-
+            <img src="<?php the_field('banner_2'); ?>" alt="Banner">
         </div>
     </div>
 </section>
