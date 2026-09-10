@@ -1013,7 +1013,8 @@ ul.menu  li a:hover {
 .categories {
     border: 1px solid #ddd;
     background: #fff;
-    height: 100%;
+    height: max-content;
+    min-height: 400px;
 }
 
 .categories-title {
