@@ -82,9 +82,7 @@
         <div class="main-banner">
 
             <a href="#">
-                <img
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png"
-                    alt="Banner"
+                <img src="<? the_field('main_banner') ?>" alt="Banner"
                 >
             </a>
 
@@ -93,16 +91,12 @@
         <div class="side-banners">
 
             <a href="#" class="side-banner">
-                <img
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png"
-                    alt="Banner 1"
+                 <img src="<? the_field('banner_1') ?>" alt="Banner"
                 >
             </a>
 
             <a href="#" class="side-banner">
-                <img
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png"
-                    alt="Banner 2"
+                <img src="<? the_field('banner_2') ?>" alt="Banner"
                 >
             </a>
 
