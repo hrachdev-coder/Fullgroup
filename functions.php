@@ -251,9 +251,9 @@ function full_group_product_phone_button() {
         <a href="tel:+37409045150" class="product-phone-button">
             Զանգահարել՝ +374 095 04 51 50
         </a>
-        <div class="product-info-subtext">
-           Երաշխիքային ժամկետը՝ 48 ամիս, ապրանքի առաքման ժամկետը՝ 1-3 աշխատանքային օր
-        </div>
+       <div class="product-info-subtext">
+    Երաշխիքային ժամկետը՝ <?php echo esc_html( get_field('warranty') ); ?>, ապրանքի առաքման ժամկետը՝ 1-3 աշխատանքային օր
+</div>
     </div>
     <?php
 }

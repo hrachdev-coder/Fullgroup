@@ -116,35 +116,7 @@
 
 	<div class="secondary-nav__container">
 
-		<?php
-		$categories = get_terms([
-			'taxonomy'   => 'product_cat',
-			'hide_empty' => false,
-			'parent'     => 0,
-			'number'     => 1,
-			'orderby'    => 'name',
-			'order'      => 'ASC',
-		]);
-
-		if (!empty($categories) && !is_wp_error($categories)) :
-
-			$category = $categories[0];
-			$category_link = get_term_link($category);
-
-			if (!is_wp_error($category_link)) :
-		?>
-
-			<a
-				href="<?php echo esc_url($category_link); ?>"
-				class="secondary-nav__item secondary-nav__item--green"
-			>
-				<?php echo esc_html($category->name); ?>
-			</a>
-
-		<?php
-			endif;
-		endif;
-		?>
+	
 
 
 		<a
