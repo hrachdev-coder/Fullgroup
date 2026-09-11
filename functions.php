@@ -600,3 +600,11 @@ add_filter(
 
 
 
+
+
+
+
+
+add_action( 'after_setup_theme', function() {
+    remove_theme_support( 'wc-product-gallery-zoom' );
+}, 100 );
