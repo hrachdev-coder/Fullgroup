@@ -3222,9 +3222,12 @@ ul.menu  li a:hover {
     }
 
     .single-product .woocommerce-product-gallery__image img {
-        height: 380px;
+        height: 380px !important;
+        width: 100% !important;
     }
-
+.woocommerce #content div.product div.images.woocommerce-product-gallery .flex-viewport, .woocommerce div.product div.images.woocommerce-product-gallery .flex-viewport, .woocommerce-page #content div.product div.images.woocommerce-product-gallery .flex-viewport, .woocommerce-page div.product div.images.woocommerce-product-gallery .flex-viewport{
+    height: max-content !important;
+}
     .single-product .product_title {
         font-size: 28px;
     }
