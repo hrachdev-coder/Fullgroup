@@ -604,7 +604,8 @@ add_filter(
 
 
 
-
-add_action( 'after_setup_theme', function() {
-    remove_theme_support( 'wc-product-gallery-zoom' );
+add_action( 'wp_enqueue_scripts', function() {
+    if ( is_product() ) {
+        wp_dequeue_script( 'zoom' );
+    }
 }, 100 );
