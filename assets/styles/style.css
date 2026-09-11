@@ -3210,7 +3210,7 @@ ul.menu  li a:hover {
 }
     .single-product .site-main {
         width: 100%;
-        padding: 35px 0 60px;
+        padding: 35px 16px 60px;
     }
 
     .single-product div.product {
@@ -3279,6 +3279,7 @@ ul.menu  li a:hover {
 
     .single-product .woocommerce-product-gallery__image img {
         height: max-content !important;
+        width: 100% !important;
     }
 
     .single-product .flex-control-thumbs {
