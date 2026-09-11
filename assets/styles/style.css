@@ -3163,7 +3163,20 @@ ul.menu  li a:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(47, 111, 39, .10);
 }
+.single-product .woocommerce-product-gallery,
+.single-product .woocommerce-product-gallery__wrapper,
+.single-product .woocommerce-product-gallery__image {
+    width: 100% !important;
+    max-width: 100% !important;
+}
 
+.single-product .woocommerce-product-gallery__image img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    object-fit: contain;
+}
 
 /* =========================================
    HIDE POST NAVIGATION / EDIT LINK
@@ -3203,7 +3216,14 @@ ul.menu  li a:hover {
 /* =========================================
    MOBILE
 ========================================= */
-
+@media (max-width: 768px) {
+    .single-product .woocommerce-product-gallery {
+        width: 100% !important;
+        max-width: 100% !important;
+        float: none !important;
+        margin: 0 !important;
+    }
+}
 @media (max-width: 768px) {
 .single-product .woocommerce-product-gallery__image img {
     width: 100%;
