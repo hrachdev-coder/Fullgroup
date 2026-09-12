@@ -1003,7 +1003,7 @@ ul.menu  li a:hover {
         display: block;
     }
     .categories{
-        min-height: auto;
+        min-height: auto !important;
     } 
 
 }
@@ -3264,9 +3264,9 @@ ul.menu  li a:hover {
    SMALL MOBILE
 ========================================= */
 @media(max-width: 767px) {
-    /* body.single-product {
-
-    } */
+    .woocommerce-Tabs-panel--description table{
+        width: 330px !important;
+    }
      .footer-grid {
         flex-wrap: wrap;
      }
