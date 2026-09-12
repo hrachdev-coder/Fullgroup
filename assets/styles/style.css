@@ -4786,7 +4786,6 @@ ul.menu  li a:hover {
 .single-product {
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
 }
 
 /* WooCommerce gallery */
