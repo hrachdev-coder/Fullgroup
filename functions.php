@@ -610,9 +610,17 @@ add_action( 'wp_enqueue_scripts', function() {
     }
 }, 100 );
 
-add_filter('document_title_parts', function ($title) {
-    unset($title['site']);
-    unset($title['tagline']);
+
+
+add_filter('pre_get_document_title', function ($title) {
+
+    if (is_singular()) {
+        return single_post_title('', false);
+    }
+
+    if (is_front_page()) {
+        return get_bloginfo('name');
+    }
 
     return $title;
 });
