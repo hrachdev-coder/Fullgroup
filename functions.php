@@ -609,3 +609,10 @@ add_action( 'wp_enqueue_scripts', function() {
         wp_dequeue_script( 'zoom' );
     }
 }, 100 );
+
+add_filter('document_title_parts', function ($title) {
+    unset($title['site']);
+    unset($title['tagline']);
+
+    return $title;
+});
