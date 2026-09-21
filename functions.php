@@ -148,7 +148,7 @@ function full_group_scripts() {
 
     wp_enqueue_style(
         'swiper styles',
-        get_template_directory_uri() . 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
         array(),
         _S_VERSION
     );
@@ -168,7 +168,7 @@ function full_group_scripts() {
     );
     wp_enqueue_script(
         'swiper',
-        get_template_directory_uri() . 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
         array(),
         _S_VERSION,
         true
