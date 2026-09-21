@@ -104,12 +104,10 @@
 
         </div>
 
-
-      <div class="banner-slider swiper">
-
-   <?php if ( have_rows('main_banner_slider') ) : ?>
+<?php if ( have_rows('main_banner_slider') ) : ?>
 
     <div class="banner-slider swiper">
+
         <div class="swiper-wrapper">
 
             <?php while ( have_rows('main_banner_slider') ) : the_row();
@@ -141,13 +139,13 @@
         </div>
 
         <div class="swiper-pagination"></div>
+
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
+
     </div>
 
 <?php endif; ?>
-
-</div>
 
     </div>
 </section>
