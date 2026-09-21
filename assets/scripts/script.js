@@ -133,17 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	});
 
-
-
-
-
-
-
-	
-console.log('deployed');
-
-
-
 	
 document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.querySelector('.fg-filter-toggle');
