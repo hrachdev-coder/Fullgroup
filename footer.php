@@ -21,15 +21,15 @@
                 <!-- Logo / About -->
                 <div class="footer-col footer-brand">
 
-                    <?php if ( has_custom_logo() ) : ?>
-                        <div class="footer-logo">
-                            <?php the_custom_logo(); ?>
-                        </div>
-                    <?php else : ?>
-                        <h3 class="footer-logo-text">
-                            FULL <span>GROUP</span>
-                        </h3>
-                    <?php endif; ?>
+                   <div class="footer-logo">
+                        <?php
+                        $footer_logo = get_field('footer_image', 'option');
+
+                        if ($footer_logo) :
+                        ?>
+                            <img src="<?php echo esc_url($footer_image); ?>" alt="Logo">
+                        <?php endif; ?>
+                    </div>
 
                     <p>
                         Կենցաղային և էլեկտրոնային տեխնիկայի լայն տեսականի՝
