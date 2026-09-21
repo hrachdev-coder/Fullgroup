@@ -127,22 +127,36 @@ $selected_stock = isset( $_GET['stock_status'] )
         
                     <li class="filter-category-item <?php echo $has_children ? 'has-children' : ''; ?>">
         
-                        <div class="filter-category-row">
-        
-                            <a href="<?php echo esc_url(get_term_link($parent)); ?>">
-                                <?php echo esc_html($parent->name); ?>
-                            </a>
-        
-                            <?php if ($has_children) : ?>
-                                <button
-                                    type="button"
-                                    class="filter-category-toggle"
-                                    aria-label="Բացել ենթակատեգորիաները"
-                                >
-                                    +
-                                </button>
-                            <?php endif; ?>
-        
+                       <div class="filter-category-row">
+
+                                <?php if ($has_children) : ?>
+
+                                    <span class="filter-category-title">
+                                        <?php echo esc_html($parent->name); ?>
+                                    </span>
+
+                                <?php else : ?>
+
+                                    <a href="<?php echo esc_url(get_term_link($parent)); ?>">
+                                        <?php echo esc_html($parent->name); ?>
+                                    </a>
+
+                                <?php endif; ?>
+
+
+                                <?php if ($has_children) : ?>
+
+                                    <button
+                                        type="button"
+                                        class="filter-category-toggle"
+                                        aria-label="Բացել ենթակատեգորիաները"
+                                        aria-expanded="false"
+                                    >
+                                        +
+                                    </button>
+
+                                <?php endif; ?>
+
                         </div>
         
                         <?php if ($has_children) : ?>
