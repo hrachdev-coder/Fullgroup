@@ -1376,11 +1376,11 @@ ul.menu  li a:hover {
 
 @media (max-width: 480px) {
     .category-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .category-card__image {
-        height: 280px;
+        height: auto;
     }
 }
 
@@ -3255,6 +3255,9 @@ ul.menu  li a:hover {
    SMALL MOBILE
 ========================================= */
 @media(max-width: 767px) {
+    .category-card:hover .category-card__image img {
+    transform: scale(1);
+}
     .woocommerce-Tabs-panel--description table{
         width: 330px!important;
     }
@@ -4803,6 +4806,7 @@ ul.menu  li a:hover {
     justify-content: space-between;
     gap: 10px;
     padding: 12px 0;
+    cursor: pointer;
 }
 
 .filter-category-row a {
