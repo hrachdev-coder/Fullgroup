@@ -951,12 +951,21 @@ ul.menu  li a:hover {
     margin: 0 auto;
     display: grid;
     padding: 0 80px;
-       grid-template-columns:
-        minmax(240px, 0.9fr)
-        minmax(350px, 2fr)
-        minmax(260px, 1fr);
+    display: flex;
     gap: 16px;
     align-items: stretch;
+}
+.products-container .categories {
+    flex: 0 0 24%;
+}
+
+.products-container.main-banner {
+    flex: 1;
+    min-width: 0;
+}
+
+.products-container .side-banners{
+    flex: 0 0 27%;
 }
 .subcategory-list {
     display: none;
