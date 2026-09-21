@@ -949,23 +949,31 @@ ul.menu  li a:hover {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    display: grid;
     padding: 0 80px;
     display: flex;
     gap: 16px;
     align-items: stretch;
 }
-.products-container .categories {
-    flex: 0 0 24%;
+
+
+.categories {
+    flex: 0 0 280px;
 }
 
-.products-container.main-banner {
+.banners-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 16px;
+    min-width: 0;
+}
+
+.main-banner {
     flex: 1;
     min-width: 0;
 }
 
-.products-container .side-banners{
-    flex: 0 0 27%;
+.side-banners {
+    flex: 0 0 300px;
 }
 .subcategory-list {
     display: none;

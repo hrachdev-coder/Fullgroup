@@ -2,102 +2,116 @@
 
 <section class="products-section">
     <div class="products-container">
-       <div class="categories">
-        <button class="categories-mobile-toggle" type="button">
-            <span>ԱՊՐԱՆՔԱՏԵՍԱԿՆԵՐ</span>
-            <span class="categories-mobile-icon"></span>
-        </button>
-        <div class="categories-title">
-            ԱՊՐԱՆՔԱՏԵՍԱԿՆԵՐ
-        </div>
-        <ul class="categories-list">
 
-    <?php
-    $categories = get_terms(array(
-        'taxonomy'   => 'product_cat',
-        'hide_empty' => false,
-        'parent'     => 0,
-        'orderby'    => 'menu_order',
-        'order'      => 'ASC',
-    ));
+        <div class="categories">
 
-    if (!empty($categories) && !is_wp_error($categories)) :
+            <button class="categories-mobile-toggle" type="button">
+                <span>ԱՊՐԱՆՔԱՏԵՍԱԿՆԵՐ</span>
+                <span class="categories-mobile-icon"></span>
+            </button>
 
-        foreach ($categories as $category) :
-
-            $children = get_terms(array(
-                'taxonomy'   => 'product_cat',
-                'hide_empty' => false,
-                'parent'     => $category->term_id,
-                'orderby'    => 'menu_order',
-                'order'      => 'ASC',
-            ));
-
-            $has_children = !empty($children) && !is_wp_error($children);
-    ?>
-
-        <li class="category-item">
-
-            <div class="category-row">
-
-                <?php if ($has_children) : ?>
-
-                    <span class="category-title">
-                        <?php echo esc_html($category->name); ?>
-                    </span>
-
-                <?php else : ?>
-
-                    <a href="<?php echo esc_url(get_term_link($category)); ?>">
-                        <?php echo esc_html($category->name); ?>
-                    </a>
-
-                <?php endif; ?>
-
-
-                <?php if ($has_children) : ?>
-
-                    <button class="category-arrow" type="button" aria-label="Բացել ենթակատեգորիաները">
-                        <span></span>
-                    </button>
-
-                <?php endif; ?>
-
+            <div class="categories-title">
+                ԱՊՐԱՆՔԱՏԵՍԱԿՆԵՐ
             </div>
 
+            <ul class="categories-list">
 
-            <?php if ($has_children) : ?>
+                <?php
+                $categories = get_terms(array(
+                    'taxonomy'   => 'product_cat',
+                    'hide_empty' => false,
+                    'parent'     => 0,
+                    'orderby'    => 'menu_order',
+                    'order'      => 'ASC',
+                ));
 
-                <ul class="subcategory-list">
+                if (!empty($categories) && !is_wp_error($categories)) :
 
-                    <?php foreach ($children as $child) : ?>
+                    foreach ($categories as $category) :
 
-                        <li>
-                            <a href="<?php echo esc_url(get_term_link($child)); ?>">
-                                <?php echo esc_html($child->name); ?>
-                            </a>
+                        $children = get_terms(array(
+                            'taxonomy'   => 'product_cat',
+                            'hide_empty' => false,
+                            'parent'     => $category->term_id,
+                            'orderby'    => 'menu_order',
+                            'order'      => 'ASC',
+                        ));
+
+                        $has_children = !empty($children) && !is_wp_error($children);
+                        ?>
+
+                        <li class="category-item">
+
+                            <div class="category-row">
+
+                                <?php if ($has_children) : ?>
+
+                                    <span class="category-title">
+                                        <?php echo esc_html($category->name); ?>
+                                    </span>
+
+                                <?php else : ?>
+
+                                    <a href="<?php echo esc_url(get_term_link($category)); ?>">
+                                        <?php echo esc_html($category->name); ?>
+                                    </a>
+
+                                <?php endif; ?>
+
+
+                                <?php if ($has_children) : ?>
+
+                                    <button
+                                        class="category-arrow"
+                                        type="button"
+                                        aria-label="Բացել ենթակատեգորիաները"
+                                    >
+                                        <span></span>
+                                    </button>
+
+                                <?php endif; ?>
+
+                            </div>
+
+
+                            <?php if ($has_children) : ?>
+
+                                <ul class="subcategory-list">
+
+                                    <?php foreach ($children as $child) : ?>
+
+                                        <li>
+                                            <a href="<?php echo esc_url(get_term_link($child)); ?>">
+                                                <?php echo esc_html($child->name); ?>
+                                            </a>
+                                        </li>
+
+                                    <?php endforeach; ?>
+
+                                </ul>
+
+                            <?php endif; ?>
+
                         </li>
 
-                    <?php endforeach; ?>
+                        <?php
+                    endforeach;
 
-                </ul>
+                endif;
+                ?>
 
-            <?php endif; ?>
+            </ul>
 
-        </li>
+        </div>
 
-    <?php
-        endforeach;
-    endif;
-    ?>
 
-</ul>   
-    </div>
-       <?php
+        <div class="banners-wrapper">
+
+            <?php
             $main_banner = get_field('main_banner');
             ?>
 
-            <?php if ( $main_banner ) : ?>
+            <?php if ($main_banner) : ?>
                 <div class="main-banner">
                     <img
                         src="<?php echo esc_url($main_banner); ?>"
@@ -105,15 +119,30 @@
                     >
                 </div>
             <?php endif; ?>
-        <div class="side-banners">
 
-            <img src="<?php the_field('banner_1'); ?>" alt="Banner">
 
-            <img src="<?php the_field('banner_2'); ?>" alt="Banner">
+            <div class="side-banners">
+
+                <?php if (get_field('banner_1')) : ?>
+                    <img
+                        src="<?php the_field('banner_1'); ?>"
+                        alt="Banner"
+                    >
+                <?php endif; ?>
+
+                <?php if (get_field('banner_2')) : ?>
+                    <img
+                        src="<?php the_field('banner_2'); ?>"
+                        alt="Banner"
+                    >
+                <?php endif; ?>
+
+            </div>
+
         </div>
+
     </div>
 </section>
-
 
 
 
