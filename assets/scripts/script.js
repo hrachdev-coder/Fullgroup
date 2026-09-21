@@ -236,11 +236,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    const bannerSlider = new Swiper('.banner-slider', {
+    const bannerSlider = document.querySelector('.banner-slider');
+
+    if (!bannerSlider) {
+        return;
+    }
+
+    new Swiper(bannerSlider, {
         slidesPerView: 1,
         spaceBetween: 0,
         loop: true,
-
         speed: 700,
 
         autoplay: {
@@ -249,13 +254,13 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
         pagination: {
-            el: '.banner-slider .swiper-pagination',
+            el: bannerSlider.querySelector('.swiper-pagination'),
             clickable: true,
         },
 
         navigation: {
-            nextEl: '.banner-slider .swiper-button-next',
-            prevEl: '.banner-slider .swiper-button-prev',
+            nextEl: bannerSlider.querySelector('.swiper-button-next'),
+            prevEl: bannerSlider.querySelector('.swiper-button-prev'),
         },
     });
 
