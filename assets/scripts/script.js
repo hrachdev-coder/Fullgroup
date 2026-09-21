@@ -235,16 +235,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.banner-slider');
 
-    const bannerSlider = document.querySelector('.banner-slider');
+    if (!slider) return;
 
-    if (!bannerSlider) {
-        return;
-    }
+    const nextBtn = slider.querySelector('.swiper-button-next');
+    const prevBtn = slider.querySelector('.swiper-button-prev');
+    const pagination = slider.querySelector('.swiper-pagination');
 
-    new Swiper(bannerSlider, {
+    new Swiper(slider, {
         slidesPerView: 1,
-        spaceBetween: 0,
         loop: true,
         speed: 700,
 
@@ -253,15 +253,14 @@ document.addEventListener('DOMContentLoaded', function () {
             disableOnInteraction: false,
         },
 
+        navigation: {
+            nextEl: nextBtn,
+            prevEl: prevBtn,
+        },
+
         pagination: {
-            el: bannerSlider.querySelector('.swiper-pagination'),
+            el: pagination,
             clickable: true,
         },
-
-        navigation: {
-            nextEl: bannerSlider.querySelector('.swiper-button-next'),
-            prevEl: bannerSlider.querySelector('.swiper-button-prev'),
-        },
     });
-
 });
