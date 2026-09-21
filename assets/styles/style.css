@@ -1375,6 +1375,12 @@ ul.menu  li a:hover {
 }
 
 @media (max-width: 480px) {
+    .category-card__content  {
+        padding: 8px 6px 8px;
+    }
+    .category-card__content h3 {
+        font-size: 14px !important;    
+    }
     .category-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
