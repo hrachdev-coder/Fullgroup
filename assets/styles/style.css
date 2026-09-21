@@ -1166,10 +1166,7 @@ ul.menu  li a:hover {
 @media (max-width: 1200px) {
 
     .products-container {
-         grid-template-columns:
-            minmax(220px, 0.9fr)
-            minmax(320px, 1.6fr)
-            minmax(220px, 1fr);
+        grid-template-columns: 400px minmax(0, 1fr);
     }
 
     .side-banners {
