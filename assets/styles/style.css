@@ -1190,8 +1190,10 @@ ul.menu  li a:hover {
     }
 
     .main-banner {
-        min-height: 300px;
+        min-height: 285px;
         margin-bottom: 20px;
+        height: 285px;
+        background-size: contain
     }
 
     .side-banners {
