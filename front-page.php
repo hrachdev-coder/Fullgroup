@@ -105,51 +105,47 @@
         </div>
 
 
-       <div class="banner-slider swiper">
+      <div class="banner-slider swiper">
 
-            <?php if ( have_rows('slides') ) : ?>
+    <?php if ( have_rows('slides') ) : ?>
 
-                <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
 
-                    <?php while ( have_rows('slides') ) : the_row();
+            <?php while ( have_rows('slides') ) : the_row();
 
-                        $image = get_sub_field('slider_image');
-                        $caption = get_sub_field('caption');
-                    ?>
+                $image = get_sub_field('slider_image');
+                $caption = get_sub_field('caption');
+            ?>
 
-                        <div class="swiper-slide">
+                <div class="swiper-slide">
 
-                            <?php if ( $image ) : ?>
-                                <?php echo wp_get_attachment_image(
-                                    $image,
-                                    'full',
-                                    false,
-                                    array(
-                                        'class' => 'banner-slider__image'
-                                    )
-                                ); ?>
-                            <?php endif; ?>
+                    <?php if ( $image ) : ?>
+                        <img
+                            src="<?php echo esc_url($image); ?>"
+                            alt=""
+                            class="banner-slider__image"
+                        >
+                    <?php endif; ?>
 
-                            <?php if ( $caption ) : ?>
-                                <p class="banner-slider__caption">
-                                    <?php echo esc_html( $caption ); ?>
-                                </p>
-                            <?php endif; ?>
-
-                        </div>
-
-                    <?php endwhile; ?>
+                    <?php if ( $caption ) : ?>
+                        <p class="banner-slider__caption">
+                            <?php echo esc_html($caption); ?>
+                        </p>
+                    <?php endif; ?>
 
                 </div>
 
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-            <?php endif; ?>
+            <?php endwhile; ?>
 
         </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    <?php endif; ?>
+
+</div>
 
     </div>
 </section>
