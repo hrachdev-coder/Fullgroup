@@ -107,13 +107,14 @@
 
       <div class="banner-slider swiper">
 
-    <?php if ( have_rows('slides') ) : ?>
+   <?php if ( have_rows('slides') ) : ?>
 
+    <div class="banner-slider swiper">
         <div class="swiper-wrapper">
 
             <?php while ( have_rows('slides') ) : the_row();
 
-                $image = get_sub_field('slider_image');
+                $image   = get_sub_field('slider_image');
                 $caption = get_sub_field('caption');
             ?>
 
@@ -142,8 +143,9 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
+    </div>
 
-    <?php endif; ?>
+<?php endif; ?>
 
 </div>
 
