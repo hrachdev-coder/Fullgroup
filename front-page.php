@@ -93,15 +93,18 @@
 
 </ul>   
     </div>
-        <?php
-        $main_banner = get_field('main_banner');
-        ?>
+       <?php
+            $main_banner = get_field('main_banner');
+            ?>
 
-        <?php if ( $main_banner ) : ?>
-            <div class="main-banner"
-                style="background-image: url('<?php echo esc_url($main_banner); ?>');">
-            </div>
-        <?php endif; ?>
+            <?php if ( $main_banner ) : ?>
+                <div class="main-banner">
+                    <img
+                        src="<?php echo esc_url($main_banner); ?>"
+                        alt="Main banner"
+                    >
+                </div>
+            <?php endif; ?>
         <div class="side-banners">
 
             <img src="<?php the_field('banner_1'); ?>" alt="Banner">
