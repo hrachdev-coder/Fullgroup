@@ -946,13 +946,13 @@ ul.menu  li a:hover {
 }
 
 .products-container {
-    width: 88%;
-    max-width: 1650px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     display: grid;
+    padding: 0 80px;
     grid-template-columns: 330px minmax(0, 1fr) 360px;
-    gap: 30px;
-
+    gap: 16px;
     align-items: stretch;
 }
 .subcategory-list {
@@ -1130,7 +1130,7 @@ ul.menu  li a:hover {
     min-height: 450px;
     overflow: hidden;
     border-radius: 6px;
-    
+
 }
 
 .main-banner img {
@@ -1163,8 +1163,6 @@ ul.menu  li a:hover {
 @media (max-width: 1200px) {
 
     .products-container {
-        width: 94%;
-
         grid-template-columns: 280px minmax(0, 1fr);
     }
 
