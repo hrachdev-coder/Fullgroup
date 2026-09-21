@@ -79,13 +79,15 @@
 
         </ul>    </div>
         <!-- CENTER: HARD CODE BANNER -->
-        <div class="main-banner">
+        <?php
+        $main_banner = get_field('main_banner');
+        ?>
 
-           <?php if ( get_field('main_banner') ) : ?>
-                <img src="<?php echo esc_url( get_field('main_banner') ); ?>" alt="Banner">
-            <?php endif; ?>
-
-        </div>
+        <?php if ( $main_banner ) : ?>
+            <div class="main-banner"
+                style="background-image: url('<?php echo esc_url($main_banner); ?>');">
+            </div>
+        <?php endif; ?>
         <!-- RIGHT: HARD CODE CARDS -->
         <div class="side-banners">
 
