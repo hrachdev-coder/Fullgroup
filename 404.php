@@ -10,51 +10,74 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main class="error-404-page">
+    <div class="error-404-container">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'full-group' ); ?></h1>
-			</header><!-- .page-header -->
+        <div class="error-404-code">404</div>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'full-group' ); ?></p>
+        <span class="error-404-label">Էջը չի գտնվել</span>
 
-					<?php
-					get_search_form();
+        <h1>Oops! Այս էջը գոյություն չունի</h1>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+        <p>
+            Հնարավոր է էջը տեղափոխվել է, ջնջվել է կամ հասցեն սխալ է մուտքագրված։
+            Կարող եք վերադառնալ գլխավոր էջ կամ դիտել մեր ապրանքները։
+        </p>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'full-group' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
+        <div class="error-404-actions">
 
-					<?php
-					/* translators: %1$s: smiley */
-					$full_group_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'full-group' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$full_group_archive_content" );
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="error-404-btn error-404-btn--primary">
+                Վերադառնալ գլխավոր էջ
+            </a>
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+            <?php if (class_exists('WooCommerce')) : ?>
+                <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="error-404-btn error-404-btn--secondary">
+                    Տեսնել ապրանքները
+                </a>
+            <?php endif; ?>
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+        </div>
 
-	</main><!-- #main -->
+        <div class="error-404-search">
+
+            <h3>Փնտրեք անհրաժեշտ ապրանքը</h3>
+
+            <form
+                role="search"
+                method="get"
+                class="error-search-form"
+                action="<?php echo esc_url(home_url('/')); ?>"
+            >
+
+                <input
+                    type="search"
+                    name="s"
+                    placeholder="Փնտրել ապրանք..."
+                    value="<?php echo get_search_query(); ?>"
+                >
+
+                <input type="hidden" name="post_type" value="product">
+
+                <button type="submit" aria-label="Փնտրել">
+                    <svg
+                        width="21"
+                        height="21"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="M21 21l-4.35-4.35"></path>
+                    </svg>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+</main>
 
 <?php
 get_footer();
