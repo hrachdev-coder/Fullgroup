@@ -93,7 +93,6 @@
 
 </ul>   
     </div>
-        <!-- CENTER: HARD CODE BANNER -->
         <?php
         $main_banner = get_field('main_banner');
         ?>
@@ -103,7 +102,6 @@
                 style="background-image: url('<?php echo esc_url($main_banner); ?>');">
             </div>
         <?php endif; ?>
-        <!-- RIGHT: HARD CODE CARDS -->
         <div class="side-banners">
 
             <img src="<?php the_field('banner_1'); ?>" alt="Banner">
