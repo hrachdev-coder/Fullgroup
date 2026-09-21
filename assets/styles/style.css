@@ -1135,19 +1135,6 @@ ul.menu  li a:hover {
     background-repeat: no-repeat;
 }
 
-/* .main-banner a {
-    display: block;
-    width: 100%;
-    height: 425px;
-}
-
-.main-banner img {
-    display: block;
-    width: 100%;
-    height:425px;
-
-    object-fit: cover;
-} */
 
 
 /* RIGHT */
@@ -1162,7 +1149,7 @@ ul.menu  li a:hover {
 .side-banners img{
     display: block;
     width: 100%;
-    height: 200px;
+    height: 212px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -2669,12 +2656,12 @@ ul.menu  li a:hover {
     }
 
     .woocommerce ul.products {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     .woocommerce ul.products li.product a img {
-        height: 280px;
+        height: auto;
     }
 
 }
