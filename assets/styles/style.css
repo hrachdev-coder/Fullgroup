@@ -2402,7 +2402,9 @@ ul.menu  li a:hover {
     margin: 0 auto;
     padding: 50px 0 70px;
 }
-
+.category-item:has(.subcategory-list) .category-row {
+    cursor: pointer;
+}
 .woocommerce-result-count {
     display: none;
 }
