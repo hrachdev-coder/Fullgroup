@@ -195,3 +195,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const categoryItems = document.querySelectorAll('.filter-category-item.has-children');
+
+    categoryItems.forEach(function (item) {
+        const row = item.querySelector('.filter-category-row');
+        const toggle = item.querySelector('.filter-category-toggle');
+
+        if (!row) return;
+
+        row.addEventListener('click', function (e) {
+            // Եթե user-ը subcategory link-ի վրա է սեղմել՝ չխանգարենք
+            if (e.target.closest('.filter-subcategory-list a')) {
+                return;
+            }
+
+            item.classList.toggle('active');
+
+            if (toggle) {
+                const isOpen = item.classList.contains('active');
+
+                toggle.textContent = isOpen ? '−' : '+';
+                toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+        });
+    });
+});
