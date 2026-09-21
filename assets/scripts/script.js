@@ -165,3 +165,33 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const categoryToggles = document.querySelectorAll('.filter-category-toggle');
+
+    categoryToggles.forEach(function (button) {
+
+        button.addEventListener('click', function () {
+
+            const item = this.closest('.filter-category-item');
+
+            item.classList.toggle('active');
+
+            this.textContent = item.classList.contains('active') ? '−' : '+';
+
+        });
+
+    });
+
+});

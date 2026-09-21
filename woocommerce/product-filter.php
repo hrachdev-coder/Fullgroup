@@ -1,3 +1,89 @@
+<div class="filter-group filter-categories">
+
+    <h3>Կատեգորիաներ</h3>
+
+    <ul class="filter-category-list">
+
+        <?php
+        $parent_categories = get_terms([
+            'taxonomy'   => 'product_cat',
+            'hide_empty' => true,
+            'parent'     => 0,
+            'orderby'    => 'menu_order',
+            'order'      => 'ASC',
+        ]);
+
+        if (!empty($parent_categories) && !is_wp_error($parent_categories)) :
+
+            foreach ($parent_categories as $parent) :
+
+                $children = get_terms([
+                    'taxonomy'   => 'product_cat',
+                    'hide_empty' => true,
+                    'parent'     => $parent->term_id,
+                    'orderby'    => 'menu_order',
+                    'order'      => 'ASC',
+                ]);
+
+                $has_children = !empty($children) && !is_wp_error($children);
+        ?>
+
+            <li class="filter-category-item <?php echo $has_children ? 'has-children' : ''; ?>">
+
+                <div class="filter-category-row">
+
+                    <a href="<?php echo esc_url(get_term_link($parent)); ?>">
+                        <?php echo esc_html($parent->name); ?>
+                    </a>
+
+                    <?php if ($has_children) : ?>
+                        <button
+                            type="button"
+                            class="filter-category-toggle"
+                            aria-label="Բացել ենթակատեգորիաները"
+                        >
+                            +
+                        </button>
+                    <?php endif; ?>
+
+                </div>
+
+                <?php if ($has_children) : ?>
+
+                    <ul class="filter-subcategory-list">
+
+                        <?php foreach ($children as $child) : ?>
+
+                            <li>
+                                <a href="<?php echo esc_url(get_term_link($child)); ?>">
+                                    <?php echo esc_html($child->name); ?>
+                                </a>
+                            </li>
+
+                        <?php endforeach; ?>
+
+                    </ul>
+
+                <?php endif; ?>
+
+            </li>
+
+        <?php
+            endforeach;
+        endif;
+        ?>
+
+    </ul>
+
+</div>
+
+
+
+
+
+
+
+
 <?php
 defined( 'ABSPATH' ) || exit;
 
