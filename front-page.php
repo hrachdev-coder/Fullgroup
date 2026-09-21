@@ -12,72 +12,87 @@
         </div>
         <ul class="categories-list">
 
-            <?php
-            $categories = get_terms(array(
+    <?php
+    $categories = get_terms(array(
+        'taxonomy'   => 'product_cat',
+        'hide_empty' => false,
+        'parent'     => 0,
+        'orderby'    => 'menu_order',
+        'order'      => 'ASC',
+    ));
+
+    if (!empty($categories) && !is_wp_error($categories)) :
+
+        foreach ($categories as $category) :
+
+            $children = get_terms(array(
                 'taxonomy'   => 'product_cat',
                 'hide_empty' => false,
-                'parent'     => 0,
+                'parent'     => $category->term_id,
                 'orderby'    => 'menu_order',
                 'order'      => 'ASC',
             ));
 
-            if (!empty($categories) && !is_wp_error($categories)) :
+            $has_children = !empty($children) && !is_wp_error($children);
+    ?>
 
-                foreach ($categories as $category) :
+        <li class="category-item">
 
-                    $children = get_terms(array(
-                        'taxonomy'   => 'product_cat',
-                        'hide_empty' => false,
-                        'parent'     => $category->term_id,
-                        'orderby'    => 'menu_order',
-                        'order'      => 'ASC',
-                    ));
-            ?>
+            <div class="category-row">
 
-                <li class="category-item">
+                <?php if ($has_children) : ?>
 
-                    <div class="category-row">
+                    <span class="category-title">
+                        <?php echo esc_html($category->name); ?>
+                    </span>
 
-                        <a href="<?php echo esc_url(get_term_link($category)); ?>">
-                            <?php echo esc_html($category->name); ?>
-                        </a>
+                <?php else : ?>
 
-                        <?php if (!empty($children) && !is_wp_error($children)) : ?>
+                    <a href="<?php echo esc_url(get_term_link($category)); ?>">
+                        <?php echo esc_html($category->name); ?>
+                    </a>
 
-                            <button class="category-arrow" type="button">
-                                <span></span>
-                            </button>
+                <?php endif; ?>
 
-                        <?php endif; ?>
 
-                    </div>
+                <?php if ($has_children) : ?>
 
-                    <?php if (!empty($children) && !is_wp_error($children)) : ?>
+                    <button class="category-arrow" type="button" aria-label="Բացել ենթակատեգորիաները">
+                        <span></span>
+                    </button>
 
-                        <ul class="subcategory-list">
+                <?php endif; ?>
 
-                            <?php foreach ($children as $child) : ?>
+            </div>
 
-                                <li>
-                                    <a href="<?php echo esc_url(get_term_link($child)); ?>">
-                                        <?php echo esc_html($child->name); ?>
-                                    </a>
-                                </li>
 
-                            <?php endforeach; ?>
+            <?php if ($has_children) : ?>
 
-                        </ul>
+                <ul class="subcategory-list">
 
-                    <?php endif; ?>
+                    <?php foreach ($children as $child) : ?>
 
-                </li>
+                        <li>
+                            <a href="<?php echo esc_url(get_term_link($child)); ?>">
+                                <?php echo esc_html($child->name); ?>
+                            </a>
+                        </li>
 
-            <?php
-                endforeach;
-            endif;
-            ?>
+                    <?php endforeach; ?>
 
-        </ul>    </div>
+                </ul>
+
+            <?php endif; ?>
+
+        </li>
+
+    <?php
+        endforeach;
+    endif;
+    ?>
+
+</ul>   
+    </div>
         <!-- CENTER: HARD CODE BANNER -->
         <?php
         $main_banner = get_field('main_banner');
