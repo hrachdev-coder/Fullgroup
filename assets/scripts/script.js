@@ -221,8 +221,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
+
     const sliderElement = document.querySelector('.banner-slider.swiper');
 
     if (!sliderElement) return;
@@ -232,9 +232,21 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 0,
         loop: true,
         speed: 700,
+
         autoplay: {
             delay: 3000,
             disableOnInteraction: false
+        },
+
+        navigation: {
+            nextEl: '.banner-slider .swiper-button-next',
+            prevEl: '.banner-slider .swiper-button-prev'
+        },
+
+        pagination: {
+            el: '.banner-slider .swiper-pagination',
+            clickable: true
         }
     });
+
 });
