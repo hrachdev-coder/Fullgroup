@@ -52,7 +52,6 @@ get_header();
 
                 <div class="about-intro__visual">
                     <div class="about-image-placeholder" style="background-image: url('<?php the_field('about_image') ?>');">
-                        <span>FULL GROUP</span>
                     </div>
                 </div>
 
