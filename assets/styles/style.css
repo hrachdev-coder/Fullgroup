@@ -1670,19 +1670,21 @@ ul.menu  li a:hover {
     }
 
     .tech-category-grid {
-        grid-template-columns: 1fr;
-
-        gap: 70px;
+       grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
     }
 
     .tech-category-card {
-        min-height: 240px;
+        min-height: auto
     }
 
     .tech-category-content h3 {
-        font-size: 24px;
+        font-size: 15px;
     }
-
+    .tech-category-image img {
+        width: 80px;
+        height: 80px;
+    }
 }
 
 
