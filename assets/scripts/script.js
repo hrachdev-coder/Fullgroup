@@ -238,10 +238,6 @@ document.addEventListener('DOMContentLoaded', function () {
             disableOnInteraction: false
         },
 
-        navigation: {
-            nextEl: '.banner-slider .swiper-button-next',
-            prevEl: '.banner-slider .swiper-button-prev'
-        },
 
         pagination: {
             el: '.banner-slider .swiper-pagination',
