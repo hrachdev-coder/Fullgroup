@@ -4651,7 +4651,10 @@ ul.menu  li a:hover {
         line-height: 1;
         transition: transform 0.2s ease;
     }
-
+  .fg-filter-toggle__icon svg {
+        width: 15px;
+        height: 15px;
+    }
     .fg-filter-toggle[aria-expanded="true"] .fg-filter-toggle__icon {
         transform: rotate(180deg);
     }
