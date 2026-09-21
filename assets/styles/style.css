@@ -1179,7 +1179,18 @@ ul.menu  li a:hover {
     }
 
 }
-
+@media(max-width: 1100px) {
+    .products-container {
+        padding: 0 15px;
+    }
+    .main-banner {
+        height: 406px;
+        min-height: 406px;
+    }
+    .main-banner img{
+       object-fit: contain;
+    }
+}
 
 /* MOBILE */
 
