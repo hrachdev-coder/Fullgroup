@@ -227,3 +227,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const bannerSlider = new Swiper('.banner-slider', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+
+        speed: 700,
+
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+
+        pagination: {
+            el: '.banner-slider .swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.banner-slider .swiper-button-next',
+            prevEl: '.banner-slider .swiper-button-prev',
+        },
+    });
+
+});

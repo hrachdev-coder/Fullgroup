@@ -954,9 +954,49 @@ ul.menu  li a:hover {
     gap: 16px;
     align-items: stretch;
 }
+.banner-slider {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
 
+.banner-slider .swiper-slide {
+    position: relative;
+}
 
-.categories {
+.banner-slider__image {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.banner-slider__caption {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    z-index: 2;
+
+    margin: 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .banner-slider__image {
+        height: 250px;
+    }
+
+    .banner-slider__caption {
+        left: 20px;
+        bottom: 20px;
+        font-size: 20px;
+    }
+}
+
+/* .categories {
     flex: 0 0 280px;
 }
 
@@ -970,7 +1010,7 @@ ul.menu  li a:hover {
 .main-banner {
     flex: 1;
     min-width: 0;
-}
+} */
 
 .side-banners {
     flex: 0 0 300px;

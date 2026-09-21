@@ -105,41 +105,51 @@
         </div>
 
 
-        <div class="banners-wrapper">
+       <div class="banner-slider swiper">
 
-            <?php
-            $main_banner = get_field('main_banner');
+    <?php if ( have_rows('slides') ) : ?>
+
+        <div class="swiper-wrapper">
+
+            <?php while ( have_rows('slides') ) : the_row();
+
+                $image = get_sub_field('slider_image');
+                $caption = get_sub_field('caption');
             ?>
 
-            <?php if ($main_banner) : ?>
-                <div class="main-banner">
-                    <img
-                        src="<?php echo esc_url($main_banner); ?>"
-                        alt="Main banner"
-                    >
+                <div class="swiper-slide">
+
+                    <?php if ( $image ) : ?>
+                        <?php echo wp_get_attachment_image(
+                            $image,
+                            'full',
+                            false,
+                            array(
+                                'class' => 'banner-slider__image'
+                            )
+                        ); ?>
+                    <?php endif; ?>
+
+                    <?php if ( $caption ) : ?>
+                        <p class="banner-slider__caption">
+                            <?php echo esc_html( $caption ); ?>
+                        </p>
+                    <?php endif; ?>
+
                 </div>
-            <?php endif; ?>
 
-
-            <div class="side-banners">
-
-                <?php if (get_field('banner_1')) : ?>
-                    <img
-                        src="<?php the_field('banner_1'); ?>"
-                        alt="Banner"
-                    >
-                <?php endif; ?>
-
-                <?php if (get_field('banner_2')) : ?>
-                    <img
-                        src="<?php the_field('banner_2'); ?>"
-                        alt="Banner"
-                    >
-                <?php endif; ?>
-
-            </div>
+            <?php endwhile; ?>
 
         </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    <?php endif; ?>
+
+</div>
 
     </div>
 </section>
