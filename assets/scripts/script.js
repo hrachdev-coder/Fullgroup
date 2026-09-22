@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     new Swiper(sliderElement, {
         slidesPerView: 1,
-        spaceBetween: 0,
+        spaceBetween: 10,
         loop: true,
         speed: 700,
 
@@ -237,12 +237,6 @@ document.addEventListener('DOMContentLoaded', function () {
             delay: 3000,
             disableOnInteraction: false
         },
-
-
-        // pagination: {
-        //     el: '.banner-slider .swiper-pagination',
-        //     clickable: true
-        // }
     });
 
 });
