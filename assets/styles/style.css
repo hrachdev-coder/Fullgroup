@@ -984,7 +984,18 @@ ul.menu  li a:hover {
     font-size: 28px;
     font-weight: 600;
 }
+@media (max-width: 1024px) {
+    .banner-slider__image {
+       height: 500%;
+       min-height: 500px;
+    }
 
+    .banner-slider__caption {
+        left: 20px;
+        bottom: 20px;
+        font-size: 24px;
+    }
+}
 @media (max-width: 768px) {
     .banner-slider__image {
         height: 100%;
@@ -1221,7 +1232,12 @@ ul.menu  li a:hover {
     border-radius: 8px;
 }
 
+@media(max-width: 1366px) {
+     .products-container {
+        padding: 0 30px;
+    }
 
+}
 /* TABLET */
 
 @media (max-width: 1200px) {
