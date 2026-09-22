@@ -2087,6 +2087,9 @@ ul.menu  li a:hover {
 }
 
 @media (max-width: 650px) {
+    .footer-logo img {
+        width: 100px;
+    }
 
     .footer-main {
         padding: 50px 0 40px;
