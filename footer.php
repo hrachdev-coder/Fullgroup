@@ -21,16 +21,15 @@
                 <!-- Logo / About -->
                 <div class="footer-col footer-brand">
 
-                   <div class="footer-logo">
-                        <?php
-                        $footer_logo = get_field('footer_image', 'option');
+                  <div class="footer-logo">
+                    <?php
+                    $footer_logo = get_field('footer_image', 'option');
 
-                        if ($footer_logo) :
-                        ?>
-                            <img src="<?php echo esc_url($footer_image); ?>" alt="Logo">
-                        <?php endif; ?>
-                    </div>
-
+                    if ($footer_logo) :
+                    ?>
+                        <img src="<?php echo esc_url($footer_logo); ?>" alt="Logo">
+                    <?php endif; ?>
+                </div>
                     <p>
                         Կենցաղային և էլեկտրոնային տեխնիկայի լայն տեսականի՝
                         տան, խոհանոցի և առօրյա օգտագործման համար։
