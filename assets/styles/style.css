@@ -999,6 +999,8 @@ ul.menu  li a:hover {
 @media (max-width: 768px) {
     .banner-slider__image {
         height: 100%;
+        min-height: 250px;
+
     }
 
     .banner-slider__caption {
