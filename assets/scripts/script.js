@@ -239,10 +239,10 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
 
-        pagination: {
-            el: '.banner-slider .swiper-pagination',
-            clickable: true
-        }
+        // pagination: {
+        //     el: '.banner-slider .swiper-pagination',
+        //     clickable: true
+        // }
     });
 
 });
