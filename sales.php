@@ -31,7 +31,7 @@ get_header();
 
         <?php if ($sale_products->have_posts()) : ?>
 
-            <div class="products-grid">
+            <div class="sales-products-grid">
 
                 <?php while ($sale_products->have_posts()) : $sale_products->the_post(); ?>
 
@@ -45,7 +45,7 @@ get_header();
 
                     <div class="product-card">
 
-                        <a href="<?php the_permalink(); ?>" class="product-card__image">
+                        <a href="<?php the_permalink(); ?>" class="sales-product-image">
 
                             <?php if ($product->is_on_sale()) : ?>
                                 <span class="product-card__sale">
