@@ -5225,3 +5225,152 @@ ul.menu  li a:hover {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Sales Page */
+
+.sales-page {
+    padding: 60px 0 80px;
+}
+
+.sales-page__header {
+    margin-bottom: 40px;
+}
+
+.sales-page__header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.sales-page .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.sales-page .product-card {
+    position: relative;
+    background: #fff;
+}
+
+.sales-page .product-card__image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.sales-page .product-card__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.sales-page .product-card__sale {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 6px 10px;
+    background: #111;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sales-page .product-card__content {
+    padding: 15px 0;
+}
+
+.sales-page .product-card__title {
+    margin: 0 0 10px;
+    font-size: 17px;
+}
+
+.sales-page .product-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sales-page .product-card__price {
+    margin-bottom: 15px;
+}
+
+.sales-page .product-card__price del {
+    opacity: 0.5;
+    margin-right: 7px;
+}
+
+.sales-page .product-card__price ins {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.sales-page .product-card__button {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #111;
+    color: #111;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.sales-page .product-card__button:hover {
+    background: #111;
+    color: #fff;
+}
+
+.sales-empty {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.sales-empty h2 {
+    margin-bottom: 10px;
+}
+
+.sales-empty p {
+    margin: 0;
+    opacity: 0.7;
+}
+
+
+@media (max-width: 1024px) {
+
+    .sales-page .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .sales-page {
+        padding: 40px 0 60px;
+    }
+
+    .sales-page .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .sales-page .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
