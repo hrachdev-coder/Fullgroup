@@ -18,13 +18,21 @@ get_header();
         </div>
 
         <?php
-        $sale_products = wc_get_products([
-            'status'   => 'publish',
-            'limit'    => -1,
-            'on_sale'  => true,
-            'orderby'  => 'date',
-            'order'    => 'DESC',
-        ]);
+            $sale_product_ids = wc_get_product_ids_on_sale();
+
+            $sale_products = [];
+
+            if (!empty($sale_product_ids)) {
+
+                $sale_products = wc_get_products([
+                    'status'  => 'publish',
+                    'limit'   => -1,
+                    'include' => $sale_product_ids,
+                    'orderby' => 'date',
+                    'order'   => 'DESC',
+                ]);
+
+            }
         ?>
 
         <?php if (!empty($sale_products)) : ?>
