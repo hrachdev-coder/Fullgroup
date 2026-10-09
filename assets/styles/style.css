@@ -5311,14 +5311,11 @@ ul.menu  li a:hover {
     top: 14px;
     left: 14px;
     z-index: 2;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 7px 12px;
-
-    background: #111;
+    background: #f42d2d;
     color: #fff;
 
     font-size: 12px;
@@ -5364,7 +5361,7 @@ ul.menu  li a:hover {
 }
 
 .sales-product-price ins {
-    color: #111;
+    color: #f42d2d;
     text-decoration: none;
     font-weight: 700;
 }
