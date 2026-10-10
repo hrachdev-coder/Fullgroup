@@ -747,7 +747,9 @@ ul.menu  li a:hover {
 .header-logo {
     height: 86px;
 }
-
+.main-navigation  ul li:last-child a{
+    color: #159447;
+}
 /* =========================
    MOBILE BUTTON
 ========================= */
