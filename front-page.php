@@ -416,6 +416,14 @@ if ($category && !is_wp_error($category)) :
                 'terms'    => $category->term_id,
             ],
         ],
+
+        'meta_query' => [
+            [
+                'key'     => '_stock_status',
+                'value'   => 'outofstock',
+                'compare' => '!=',
+            ],
+        ],
     ]);
 
     if ($products->have_posts()) :
@@ -561,6 +569,14 @@ if ($category && !is_wp_error($category)) :
                 'taxonomy' => 'product_cat',
                 'field'    => 'term_id',
                 'terms'    => $category->term_id,
+            ],
+        ],
+
+        'meta_query' => [
+            [
+                'key'     => '_stock_status',
+                'value'   => 'outofstock',
+                'compare' => '!=',
             ],
         ],
     ]);
