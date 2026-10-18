@@ -638,3 +638,30 @@ add_filter('pre_get_document_title', function ($title) {
 
     return $title;
 });
+
+/* =====================================
+   FULL GROUP - HIDE OUT OF STOCK FROM PRODUCT SEARCH
+===================================== */
+
+function full_group_hide_out_of_stock_from_product_search( $query ) {
+
+    if ( is_admin() || ! $query->is_main_query() ) {
+        return;
+    }
+
+    if ( $query->is_search() && $query->get( 'post_type' ) === 'product' ) {
+
+        $meta_query = (array) $query->get( 'meta_query' );
+
+        $meta_query[] = array(
+            'key'     => '_stock_status',
+            'value'   => 'outofstock',
+            'compare' => '!=',
+        );
+
+        $query->set( 'meta_query', $meta_query );
+    }
+}
+
+add_action( 'pre_get_posts', 'full_group_hide_out_of_stock_from_product_search' );
+
