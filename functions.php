@@ -607,7 +607,34 @@ add_filter(
 
 
 
+/**
+ * Full Group - Hide out of stock products
+ */
+function full_group_hide_out_of_stock_products( $meta_query, $query ) {
 
+    if ( is_admin() ) {
+        return $meta_query;
+    }
+
+    if ( ! is_shop() && ! is_product_category() ) {
+        return $meta_query;
+    }
+
+    $meta_query[] = array(
+        'key'     => '_stock_status',
+        'value'   => 'instock',
+        'compare' => '=',
+    );
+
+    return $meta_query;
+}
+
+add_filter(
+    'woocommerce_product_query_meta_query',
+    'full_group_hide_out_of_stock_products',
+    30,
+    2
+);
 
 
 
